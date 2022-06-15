@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.CSS">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<script>
+    function tg() {
+        var tg = new Date();
+        var h = tg.getHours();
+        var ph = tg.getMinutes();
+        var gi = tg.getSeconds();
+
+        if (h < 10) {
+            h = "0" + h;
+        }
+        if (ph < 10) {
+            ph = "0" + ph;
+        }
+        if (gi < 10) {
+            gi = "0" + gi;
+        }
+        var str = `${h}:${ph}:${gi}`;
+
+        document.getElementById("time").innerHTML = str;
+    }
+    setInterval("tg()", 1000);
+</script>
+
+<body>
+    <div class="cc">
+        <div class="logo-menu">
+            <div class="logo">
+                <img src="img/logodhs.png" alt="">
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.HTML"><i class="fa-solid fa-house"></i> Trang Chủ</a>
+                    <a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng</a>
+                    <a href="dangkidangnhap.html"><i class="fa-solid fa-gifts"></i> Đăng Kí, Đăng Nhập</a>
+                    <input type="text">
+                </nav>
+            </div>
+        </div>
+        <header>
+            <div class="dm">
+                <div class="dmsp">
+                    <h2>DANH MỤC HẢI SẢN</h2>
+                    <p>HẢI SẢN: MỰC, TÔM, SÒ</p>
+                    <p>HẢI SẢN: CÁ, CUA, GHẸ</p>
+                    <p>HẢI SẢN: ỐC CÁC LOẠI</p>
+                    <div class="gio">
+                        <p id="time"></p>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="khungAnh">
+                        <img id="anh" src="img/slideshow/0.jpg" alt="" width="600" height="400"><br />
+                        <button type="button" onclick="first();"><<< </button>
+                                <button type="button" onclick="previous();"><< </button>
+                                        <button type="button" onclick="next();">>></button>
+                                        <button type="button" onclick="last();">>></button>
+                    </div>
+                    <script>
+                        let khoAnh = [];
+                        const nAnh = 8;
+                        let index = 0;
+
+                        for (let i = 0; i < nAnh; i++) {
+                            khoAnh[i] = new Image();
+                            khoAnh[i].src = `img/slideshow/${i}.jpg`;
+                        }
+                        function previous() {
+                            index--;
+                            if (index < 0) {
+                                index = nAnh - 1;
+                            }
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        function next() {
+                            index++;
+                            if (index >= nAnh) {
+                                index = 0;
+                            }
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        function first() {
+                            index = 0;
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        function last() {
+                            index = nAnh - 1;
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        setInterval("next()", 2000);
+                    </script>
+                </div>
+            </div>
+        </header>
+        <h1 style="text-align: center;">Sản phẩm</h1>
+        <main>
+            <article>
+                <iframe src="sanpham.html" name="hop" frameborder="0"></iframe>
+            </article>
+            <aside>
+                <ul class="as">
+                    <li><a href="gioithieu.html">Gioi Thiệu Sản Phẩm</a></li>
+                    <li><a href="#">Các Sản Phẩm Hot</a></li>
+                    <h4>
+                    </h4>
+                    </li>
+                </ul>
+                <audio autoplay loop controls>
+                    <source src="Am-thanh-tieng-song-bien-ri-rao-www_tiengdong_com.mp3">
+                </audio>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Ngô Minh Thiện_PS20453_ASM1_FPT POLYTECHNIC<br>
+                - Email: contact@daohaisan.vn - Hotline: 1900.0098 (8H-21H từ T2-CN) - Website: Daohaisan.com
+            <h4>CHÍNH SÁCH HỖ TRỢ</h4>
+            + Hình thức thanh toán: Thanh toán qua ngân hàng: MBBANK, AGRIBANK, VIETTINBANK, DONGABANK...<br>
+            + Hỗ trợ đổi trả: Sản phẩm hư hỏng --> Đổi trả sản phẩm mới, Hoàn 50% tiền sản phẩm.<br>
+            + Mua và Giao hàng nhanh chóng, tiện lợi, chất lượng phục vụ tốt.<br>
+            + Quy định chung: Phục vụ khách hàng, ân cần chu đáo, tỉ mỉ trong công việc<br>
+            + Bảo mật thông tin<br>
+            </script>
+        </footer>
+    </div>
+</body>
+
+</html>

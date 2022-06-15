@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/muahang.css">
+
+</head>
+
+<body>
+
+    <head>
+        <title></title>
+    </head>
+    <div class="container">
+        <table>
+            <caption>Các Sản Phẩm SeaFood</caption>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectall"></th>
+                    <th>Tên loại</th>
+                    <th>Giá</th>
+                    <th>Mua</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Tôm Hùm Tươi Sống</td>
+                    <td>600.000đ/kg</td>
+                    <td><button onclick="them(this)" onchange="daott(this)">Chọn</button></td>
+                </tr>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Tôm Tích Vũng Tàu</td>
+                    <td>200.000đ/kg</td>
+                    <td><button onclick="them(this)" onchange="daott(this)">Chọn</button></td>
+                </tr>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Bào Ngư </td>
+                    <td>500.000đ/kg</td>
+                    <td><button onclick="them(this)" onchange="daott(this)">Chọn</button></td>
+                </tr>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Tôm Thẻ</td>
+                    <td>200.000đ/kg</td>
+                    <td><button onclick="them(this)" onchange="daott(this)">Chọn</button></td>
+                </tr>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Ghẹ Xanh</td>
+                    <td>250.000đ/kg</td>
+                    <td><button onclick="them(this)" onchange="daott(this)">Chọn</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr width="75%" style="margin-left:100px">
+        <table id="cart">
+            <caption>giỏ hàng của bạn</caption>
+        </table>
+        <script>
+            document.getElementById("cart").style.display = "none";
+        </script>
+        <h3 id="tongtien">Tổng tiền: <span id="tong"></span></h3>
+        <script>
+            document.getElementById("tongtien").style.display = "none";
+        </script>
+    </div>
+    <script>
+        function them(button) {
+            var row = button.parentElement.parentElement.cloneNode(true);
+            var btnxoa = row.getElementsByTagName("button")[0];
+            btnxoa.innerText = "xoá";
+            btnxoa.setAttribute('onclick', 'xoa(this)');
+            document.getElementById("cart").appendChild(row);
+            tinhtong();
+            document.getElementById("cart").style.display = "";
+            document.getElementById("tongtien").style.display = "";
+        }
+        function xoa(button) {
+            var row = button.parentElement.parentElement;
+            document.getElementById("cart").removeChild(row);
+            tinhtong();
+        }
+        function tinhtong() {
+            var cart = document.getElementById("cart");
+            var rows = cart.getElementsByTagName("tr");
+            var tong = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var giatien = rows[i].children[2].innerText;
+                giatien = parseInt(giatien);
+                tong += giatien;
+            }
+            document.getElementById("tong").innerText = tong + ".000 đồng";
+        }
+        function daott(obj) {
+            var row = obj.parentElement.parentElement;
+            var btn = row.getElementsByTagName("button")[0];
+            btn.disabled = !btn.disabled;
+        }
+    </script>
+    </div>
+</body>
+
+</html>

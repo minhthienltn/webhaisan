@@ -1,0 +1,184 @@
+.container {
+    width: 600px;
+    margin: auto;
+    background: rgb(23, 64, 152);
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+    color: white;
+}
+
+caption {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    color: yellow;
+}
+
+button {
+    width: 60px;
+    height: 25px;
+}
+
+body {
+    font-family: 'Roboto';
+}
+
+.logo-menu {
+    height: 60px;
+    background-color: rgb(37, 37, 233);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    line-height: 60px;
+
+}
+
+.logo-menu .logo {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.logo-menu .menu nav {
+    position: absolute;
+    right: 10px;
+}
+
+.logo-menu .menu nav a {
+    margin: 0 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-menu .menu nav a:hover {
+    text-transform: uppercase;
+    color: rgba(255, 238, 0, 0.973);
+}
+
+.logo-menu .logo img {
+    height: 50px;
+    width: 70px;
+}
+
+header {
+    background-color: rgb(37, 37, 233);
+    padding: 15px;
+    height: 350px;
+    margin: 0;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 1px black;
+}
+
+aside {
+    height: 100px;
+    width: 25%;
+    float: right;
+    background-color: blue;
+    padding-top: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.as a {
+    color: white;
+    text-decoration: none;
+}
+
+.as a:hover {
+    color: yellow;
+    text-transform: uppercase;
+}
+
+article {
+    background-color: white;
+    height: 1300px;
+    width: 75%;
+    float: left;
+}
+
+iframe {
+    width: 100%;
+    height: 1500px;
+}
+
+.dm .dmsp {
+    width: 25%;
+    float: left;
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+
+.dm .dmsp p {
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.dm .dmsp h2 {
+    margin-left: 15px;
+}
+
+.dm .dmsp p:hover {
+    text-transform: uppercase;
+    color: rgba(255, 251, 0, 0.911);
+
+}
+
+.dm .banner {
+    width: 70%;
+    height: 300px;
+    float: right;
+
+}
+
+.dm .banner img {
+    width: 100%;
+    height: 320px;
+    border-radius: 5px;
+}
+
+footer {
+    clear: both;
+    height: 430px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(37, 37, 233);
+    color: white;
+}
+
+h1 {
+    background-color: rgb(59, 59, 224);
+    color: white;
+}
+
+.gio {
+    text-align: center;
+    background-color: rgb(27, 27, 69);
+    color: white;
+}
+
+audio {
+    margin-top: 50px;
+    background-color: blue;
+    width: 390px;
+}
